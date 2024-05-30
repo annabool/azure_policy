@@ -1,0 +1,22 @@
+    {
+      "effect": {
+        "value":
+          "DeployIfNotExists"
+      },
+      "logAnalytics": {
+        "value":
+          "/subscriptions/014a3d4b-7ecb-4f5d-b83b-37fee56640f2/resourcegroups/we-ydev-msft-secmon-rg/providers/microsoft.operationalinsights/workspaces/we-ydev-msft-secmon-law"
+      },
+      "AllMetricsEnabled": {
+        "value":
+          "True"
+      },
+      "diagnosticsSettingNameToUse": {
+        "value": 
+          "setbypolicy"
+      },
+      "AuditEventEnabled": {
+        "value":
+          "True"
+      }
+    }
