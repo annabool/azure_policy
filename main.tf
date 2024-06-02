@@ -43,3 +43,16 @@ resource "azurerm_subscription_policy_assignment" "sub_diag_set" {
     type = "SystemAssigned"
   }
 }
+
+resource "azurerm_subscription_policy_remediation" "example" {
+  name                 = "SUB_TF_ANNA_REME"
+  subscription_id      = "/subscriptions/fe7276bf-b23b-413e-8279-be285e56c0e9"
+  policy_assignment_id = "/providers/Microsoft.Authorization/policyDefinitions/951af2fa-529b-416e-ab6e-066fd85ac459"
+}
+
+# resource "azurerm_role_assignment" "example" {
+#   principal_id   = azurerm_policy_assignment.example.identity[0].principal_id
+#   scope          = azurerm_management_group.example.id
+#   role_definition_name = "Contributor"
+#   depends_on = [azurerm_policy_assignment.example]
+# }
