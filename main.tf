@@ -57,6 +57,14 @@ resource "azurerm_management_group_policy_assignment" "example" {
   name                 = local.all_definitions.built_in_definitions[count.index].name
   policy_definition_id      = local.all_definitions.built_in_definitions[count.index].id
   management_group_id = data.azurerm_management_group.LZ-ROOT.id
+  description = local.all_definitions.built_in_definitions[count.index].description
+  display_name = local.all_definitions.built_in_definitions[count.index].display_name
+  parameters = local.all_definitions.built_in_definitions[count.index].parameters
+  location = var.location
+
+  identity {
+    type = "SystemAssigned"
+  }
 }
 
 # resource "azurerm_role_assignment" "example" {

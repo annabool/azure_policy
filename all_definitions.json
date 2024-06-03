@@ -1,20 +1,68 @@
 {
     "built_in_definitions": [
         {
-            "name": "SUB_TF_ANNA_REME",
-            "id": "/subscriptions/fe7276bf-b23b-413e-8279-be285e56c0e9"
+            "name": "blabla1",
+            "id": "blabla",
+            "description": "description",
+            "display_name": "display_name",
+            "parameters": {
+                "allowedLocations": {
+                    "type": "Array",
+                    "metadata": {
+                        "description": "The list of allowed locations for resources.",
+                        "displayName": "Allowed locations",
+                        "strongType": "location"
+                    }
+                }
+            }
         },
         {
             "name": "blabla2",
-            "id": "blabla"
+            "id": "blabla",
+            "description": "description",
+            "display_name": "display_name",
+            "parameters": {
+                "allowedLocations": {
+                    "type": "Array",
+                    "metadata": {
+                        "description": "The list of allowed locations for resources.",
+                        "displayName": "Allowed locations",
+                        "strongType": "location"
+                    }
+                }
+            }
         },
         {
             "name": "blabla3",
-            "id": "blabla"
+            "id": "blabla",
+            "description": "description",
+            "display_name": "display_name",
+            "parameters": {
+                "allowedLocations": {
+                    "type": "Array",
+                    "metadata": {
+                        "description": "The list of allowed locations for resources.",
+                        "displayName": "Allowed locations",
+                        "strongType": "location"
+                    }
+                }
+            }
         },
         {
             "name": "blabla4",
-            "id": "blabla"
+            "id": "blabla",
+            "description": "description",
+            "display_name": "display_name",
+            "parameters": {
+                "allowedLocations": {
+                    "type": "Array",
+                    "metadata": {
+                        "description": "The list of allowed locations for resources.",
+                        "displayName": "Allowed locations",
+                        "strongType": "location"
+                    }
+                }
+            }
         }
     ]
 }
