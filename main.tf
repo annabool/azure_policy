@@ -6,6 +6,7 @@ data "azurerm_management_group" "LZ-ROOT" {
 locals {
   allowed_location_params = jsondecode(file("allowed_location.json"))
   diag_set_params = file("diag_set.json")
+  all_definitions = jsondecode(file("all_definitions"))
 }
 
 resource "azurerm_management_group_policy_assignment" "example" {
@@ -44,10 +45,18 @@ resource "azurerm_subscription_policy_assignment" "sub_diag_set" {
   }
 }
 
-resource "azurerm_subscription_policy_remediation" "example" {
-  name                 = "SUB_TF_ANNA_REME"
-  subscription_id      = "/subscriptions/fe7276bf-b23b-413e-8279-be285e56c0e9"
-  policy_assignment_id = "/providers/Microsoft.Authorization/policyDefinitions/951af2fa-529b-416e-ab6e-066fd85ac459"
+# resource "azurerm_subscription_policy_remediation" "example" {
+#   for_each = local.diag_set_params
+#   name                 = "SUB_TF_ANNA_REME"
+#   subscription_id      = "/subscriptions/fe7276bf-b23b-413e-8279-be285e56c0e9"
+#   policy_assignment_id = "/providers/Microsoft.Authorization/policyDefinitions/951af2fa-529b-416e-ab6e-066fd85ac459"
+# }
+
+resource "azurerm_management_group_policy_assignment" "example" {
+  count = length(local.all_definitions.built_in_definitions)
+  name                 = local.all_definitions.built_in_definitions[count.index].name
+  policy_definition_id      = local.all_definitions.built_in_definitions[count.index].id
+  management_group_id = data.azurerm_management_group.LZ-ROOT.id
 }
 
 # resource "azurerm_role_assignment" "example" {
